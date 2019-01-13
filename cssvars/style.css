@@ -2,12 +2,12 @@
   --bgcolor: red;
 }
 
-@media(min-width: 500px) {
+@media(min-width: 512px) {
   :root {
     --bgcolor: green;
   }
 }
-@media(min-width: 800px) {
+@media(min-width: 1024px) {
   :root {
     --bgcolor: blue;
   }
