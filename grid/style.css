@@ -1,0 +1,8 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid__item {
+  background: #f99;
+  border-radius: 4px;
+}
