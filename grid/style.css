@@ -8,3 +8,19 @@
   background: #f99;
   border-radius: 4px;
 }
+.grid__item2 {
+  -ms-grid-column: 2;
+}
+.grid__item3 {
+  -ms-grid-column: 3;
+}
+.grid__item4 {
+  -ms-grid-column: 4;
+}
+.grid__item5 {
+  -ms-grid-row: 2;
+}
+.grid__item6 {
+  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+}
