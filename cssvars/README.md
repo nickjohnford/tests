@@ -1,4 +1,2 @@
 # CSS Variables
-Need to get CSS Variables working with `@media` in IE11.
-
-Using [CSS Vars Ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill) causes IE11 to recognise the variable that is outside the `@media` but ignores those inside.
+[ie11CustomProperties](https://github.com/nuxodin/ie11CustomProperties/) adds CSS vars to IE11 - including those within `@media` breakpoints. However it does not work on window resize, only on initial load. Might be fixed be recalling the script on window size/orientation change.
