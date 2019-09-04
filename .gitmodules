@@ -1,0 +1,3 @@
+[submodule "cssvars/ie11CustomProperties"]
+	path = cssvars/ie11CustomProperties
+	url = https://github.com/nuxodin/ie11CustomProperties.git
