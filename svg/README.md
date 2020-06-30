@@ -1,4 +1,6 @@
 # SVG xlink
+[View the test](test.html)
+
 Experiments to test whether a single SVG can:
 - show internally linked symbols with the `<use>` tag
 - colour internally linked symbols
