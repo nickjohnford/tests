@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+figure {
+  border: 1px solid red;
+  max-width: 200px;
+}
+.greenshape {
+  fill: green;
+}
+</style>
+</head>
+<body>
+  <figure>
+    <img src="basic.svg">
+    <figcaption>basic svg loaded with normal img tag</figcaption>
+  </figure>
+  <figure>
+    <img src="symbol.svg">
+    <figcaption>svg with symbol containing path, loaded with normal img tag (shows blank)</figcaption>
+  </figure>
+  <figure>
+    <svg class="greenshape">
+      <use xlink:href="symbol.svg#shape">
+    </svg>
+    <figcaption>svg with symbol containing path, loaded with xlinked svg tag, coloured with css</figcaption>
+  </figure>
+  <figure>
+    <img src="both.svg">
+    <figcaption>svg with symbol containing path but internally xlinked, normal image tag, coloured with internal svg use tag</figcaption>
+  </figure>
+  <figure>
+    <svg class="greenshape">
+      <use xlink:href="both.svg#shape">
+    </svg>
+    <figcaption>svg with symbol containing path but internally xlinked, loaded with xlinked svg tag, coloured with css</figcaption>
+  </figure>
+</body>
+</html>
