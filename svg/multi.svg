@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+  <symbol id="shape">
+    <polygon points="25 25 25 75 75 75 75 25"/>
+  </symbol>
+  <symbol id="shape2">
+    <polygon points="15 15 15 60 60 60 60 15"/>
+  </symbol>
+  <use xlink:href="#shape" fill="red"/>
+  <use xlink:href="#shape2" fill="blue"/>
+</svg>

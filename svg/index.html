@@ -11,6 +11,9 @@ figure {
 .greenshape {
   fill: green;
 }
+.pinkshape {
+  fill: magenta;
+}
 </style>
 </head>
 <body>
@@ -18,6 +21,7 @@ figure {
     <img src="basic.svg">
     <figcaption>basic svg loaded with normal img tag</figcaption>
   </figure>
+
   <figure>
     <img src="symbol.svg">
     <figcaption>svg with symbol containing path, loaded with normal img tag (shows blank)</figcaption>
@@ -28,6 +32,7 @@ figure {
     </svg>
     <figcaption>svg with symbol containing path, loaded with xlinked svg tag, coloured with css</figcaption>
   </figure>
+
   <figure>
     <img src="both.svg">
     <figcaption>svg with symbol containing path but internally xlinked, normal image tag, coloured with internal svg use tag</figcaption>
@@ -38,5 +43,21 @@ figure {
     </svg>
     <figcaption>svg with symbol containing path but internally xlinked, loaded with xlinked svg tag, coloured with css</figcaption>
   </figure>
+
+  <figure>
+    <img src="multi.svg">
+    <figcaption>svg with symbol containing multiple shapes internally xlinked, normal image tag, coloured with internal svg use tag</figcaption>
+  </figure>
+  <figure>
+    <svg>
+      <g>
+        <use xlink:href="multi.svg#shape" class="pinkshape"/>
+        <use xlink:href="multi.svg#shape2" class="greenshape"/>
+      </g>
+    </svg>
+    <figcaption>svg with symbol containing path but internally xlinked, loaded with xlinked svg tag, coloured with css</figcaption>
+  </figure>
+
+
 </body>
 </html>
