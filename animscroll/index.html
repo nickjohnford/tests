@@ -15,7 +15,7 @@ section {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  transition: margin-top 2s ease-out;
+  transition: margin-top 1s ease-out;
   margin-left: auto;
   margin-right: auto;
 }
@@ -25,10 +25,6 @@ section {
 
 <section></section>
 <section></section>
-<section></section>
-<section></section>
-<section></section>
-<section></section>
 <section style="background: yellow"><div class="item"></div></section>
 <section></section>
 <section style="background: yellow"><div class="item"></div></section>
@@ -42,33 +38,36 @@ section {
 <section style="background: yellow"><div class="item"></div></section>
 <section></section>
 <section style="background: yellow"><div class="item"></div></section>
-<section></section>
-<section></section>
-<section></section>
-<section></section>
-<section></section>
 <section></section>
 <section></section>
 
 
 <script>
-function updateItemOffset(itemElem, scrollPosMid) {
-  var maxOffset = 50;
+function updateItemOffset(itemElem, confObj) {
+  if (confObj.scrollPosMid > itemElem.offsetTop) {
+    var itemDistFromMid = confObj.scrollPosMid - itemElem.offsetTop;
+  } else {
+    var itemDistFromMid = itemElem.offsetTop - confObj.scrollPosMid;
+  }
+  var maxOffsetGradient = (itemDistFromMid / confObj.halfWin) * confObj.maxOffset;
   var curItemOffset = Number(itemElem.style.marginTop.replace('px', ''));
   var curItemPos = itemElem.offsetTop - curItemOffset;
-  var newItemOffset = scrollPosMid - curItemPos;
-  if (maxOffset < newItemOffset) {
-    newItemOffset = maxOffset;
-  } else if (-maxOffset > newItemOffset) {
-    newItemOffset = -maxOffset;
+  var newItemOffset = confObj.scrollPosMid - curItemPos;
+  if (maxOffsetGradient < newItemOffset) {
+    newItemOffset = maxOffsetGradient;
+  } else if (-maxOffsetGradient > newItemOffset) {
+    newItemOffset = -maxOffsetGradient;
   }
   itemElem.style.marginTop = newItemOffset + 'px';
 }
 function triggerScrollAnim() {
   var itemElems = document.getElementsByClassName('item');
-  var scrollPosMid = window.scrollY + (0.5 * window.innerHeight);
+  var confObj = {};
+  confObj.halfWin = 0.5 * window.innerHeight;
+  confObj.scrollPosMid = window.scrollY + confObj.halfWin;
+  confObj.maxOffset = 50;
   for (var i = 0; itemElems.length > i; i++) {
-    updateItemOffset(itemElems[i], scrollPosMid);
+    updateItemOffset(itemElems[i], confObj);
   }
 }
 function initScrollAnim() {
