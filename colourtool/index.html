@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<label>H: <input id="js-hue" type="range" min="0" max="360" value="0"></label>
+<label>S: <input id="js-sat" type="range" min="0" max="100" value="50"></label>
+<label>L: <input id="js-light" type="range" min="0" max="100" value="50"></label>
+<br>
+<label>HStep: <input id="js-hstep" type="range" min="0" max="36" value="15"></label>
+<label>SStep: <input id="js-sstep" type="range" min="0" max="6" value="5"></label>
+<label>LStep: <input id="js-lstep" type="range" min="0" max="6" value="5"></label>
+
+
+<div class="swatches">
+  <div>H</div>
+  <div class="swatch"></div>
+  <div class="swatch hue1"></div>
+  <div class="swatch hue2"></div>
+  <div class="swatch hue3"></div>
+  <div class="swatch hue4"></div>
+  <div class="swatch hue5"></div>
+  <div class="swatch hue6"></div>
+  <div class="swatch hue7"></div>
+  <div class="swatch hue8"></div>
+  <div class="swatch hue9"></div>
+</div>
+<div class="swatches">
+  <div>S</div>
+  <div class="swatch"></div>
+  <div class="swatch sat1"></div>
+  <div class="swatch sat2"></div>
+  <div class="swatch sat3"></div>
+  <div class="swatch sat4"></div>
+  <div class="swatch sat5"></div>
+  <div class="swatch sat6"></div>
+  <div class="swatch sat7"></div>
+  <div class="swatch sat8"></div>
+  <div class="swatch sat9"></div>
+</div>
+<div class="swatches">
+  <div>dS</div>
+  <div class="swatch"></div>
+  <div class="swatch desat1"></div>
+  <div class="swatch desat2"></div>
+  <div class="swatch desat3"></div>
+  <div class="swatch desat4"></div>
+  <div class="swatch desat5"></div>
+  <div class="swatch desat6"></div>
+  <div class="swatch desat7"></div>
+  <div class="swatch desat8"></div>
+  <div class="swatch desat9"></div>
+</div>
+<div class="swatches">
+  <div>S, L</div>
+  <div class="swatch"></div>
+  <div class="swatch sat1 light1"></div>
+  <div class="swatch sat2 light2"></div>
+  <div class="swatch sat3 light3"></div>
+  <div class="swatch sat4 light4"></div>
+  <div class="swatch sat5 light5"></div>
+  <div class="swatch sat6 light6"></div>
+  <div class="swatch sat7 light7"></div>
+  <div class="swatch sat8 light8"></div>
+  <div class="swatch sat9 light9"></div>
+</div>
+<div class="swatches">
+  <div>L</div>
+  <div class="swatch"></div>
+  <div class="swatch light1"></div>
+  <div class="swatch light2"></div>
+  <div class="swatch light3"></div>
+  <div class="swatch light4"></div>
+  <div class="swatch light5"></div>
+  <div class="swatch light6"></div>
+  <div class="swatch light7"></div>
+  <div class="swatch light8"></div>
+  <div class="swatch light9"></div>
+</div>
+<div class="swatches">
+  <div>dS, L</div>
+  <div class="swatch"></div>
+  <div class="swatch desat1 light1"></div>
+  <div class="swatch desat2 light2"></div>
+  <div class="swatch desat3 light3"></div>
+  <div class="swatch desat4 light4"></div>
+  <div class="swatch desat5 light5"></div>
+  <div class="swatch desat6 light6"></div>
+  <div class="swatch desat7 light7"></div>
+  <div class="swatch desat8 light8"></div>
+  <div class="swatch desat9 light9"></div>
+</div>
+<div class="swatches">
+  <div>S, D</div>
+  <div class="swatch"></div>
+  <div class="swatch sat1 dark1"></div>
+  <div class="swatch sat2 dark2"></div>
+  <div class="swatch sat3 dark3"></div>
+  <div class="swatch sat4 dark4"></div>
+  <div class="swatch sat5 dark5"></div>
+  <div class="swatch sat6 dark6"></div>
+  <div class="swatch sat7 dark7"></div>
+  <div class="swatch sat8 dark8"></div>
+  <div class="swatch sat9 dark9"></div>
+</div>
+<div class="swatches">
+  <div>D</div>
+  <div class="swatch"></div>
+  <div class="swatch dark1"></div>
+  <div class="swatch dark2"></div>
+  <div class="swatch dark3"></div>
+  <div class="swatch dark4"></div>
+  <div class="swatch dark5"></div>
+  <div class="swatch dark6"></div>
+  <div class="swatch dark7"></div>
+  <div class="swatch dark8"></div>
+  <div class="swatch dark9"></div>
+</div>
+<div class="swatches">
+  <div>dS, D</div>
+  <div class="swatch"></div>
+  <div class="swatch desat1 dark1"></div>
+  <div class="swatch desat2 dark2"></div>
+  <div class="swatch desat3 dark3"></div>
+  <div class="swatch desat4 dark4"></div>
+  <div class="swatch desat5 dark5"></div>
+  <div class="swatch desat6 dark6"></div>
+  <div class="swatch desat7 dark7"></div>
+  <div class="swatch desat8 dark8"></div>
+  <div class="swatch desat9 dark9"></div>
+</div>
+<div class="swatches">
+  <div>H, S</div>
+  <div class="swatch"></div>
+  <div class="swatch hue1 sat1"></div>
+  <div class="swatch hue2 sat2"></div>
+  <div class="swatch hue3 sat3"></div>
+  <div class="swatch hue4 sat4"></div>
+  <div class="swatch hue5 sat5"></div>
+  <div class="swatch hue6 sat6"></div>
+  <div class="swatch hue7 sat7"></div>
+  <div class="swatch hue8 sat8"></div>
+  <div class="swatch hue9 sat9"></div>
+</div>
+<div class="swatches">
+  <div>H, L</div>
+  <div class="swatch"></div>
+  <div class="swatch hue1 light1"></div>
+  <div class="swatch hue2 light2"></div>
+  <div class="swatch hue3 light3"></div>
+  <div class="swatch hue4 light4"></div>
+  <div class="swatch hue5 light5"></div>
+  <div class="swatch hue6 light6"></div>
+  <div class="swatch hue7 light7"></div>
+  <div class="swatch hue8 light8"></div>
+  <div class="swatch hue9 light9"></div>
+</div>
+<div class="swatches">
+  <div>H, S, L</div>
+  <div class="swatch"></div>
+  <div class="swatch hue1 sat1 light1"></div>
+  <div class="swatch hue2 sat2 light2"></div>
+  <div class="swatch hue3 sat3 light3"></div>
+  <div class="swatch hue4 sat4 light4"></div>
+  <div class="swatch hue5 sat5 light5"></div>
+  <div class="swatch hue6 sat6 light6"></div>
+  <div class="swatch hue7 sat7 light7"></div>
+  <div class="swatch hue8 sat8 light8"></div>
+  <div class="swatch hue9 sat9 light9"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
