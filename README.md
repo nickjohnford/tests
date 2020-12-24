@@ -7,4 +7,6 @@ A place to hold HTML/CSS/JS tests and experiments
 
 [IMG SRCSET SIZES](srcset) : testing srcset size weirdness
 
+[PICTURE ELEMENT](picture) : basic picture element test
+
 [SVG](svg) : SVGs that work when loaded directly as well as with xlink
