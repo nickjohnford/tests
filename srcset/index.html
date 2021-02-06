@@ -10,6 +10,7 @@
 </style>
 </head>
 <body>
+1. Screen width (also takes pixel density into account)<br>
 <img
   srcset="https://via.placeholder.com/300x179/ff0000 300w,
   https://via.placeholder.com/768x459/00ff00 768w,
@@ -17,6 +18,12 @@
   https://via.placeholder.com/1500x612/00ffff 1500w,
   https://via.placeholder.com/2048x1024/ff00ff 2048w"
   sizes="(min-width: 50em) 50vw, (min-width: 70em) 491px"
+>
+2. Just pixel density (ingores screen width)
+<img
+  srcset="https://via.placeholder.com/300x179/ff0000 1x,
+  https://via.placeholder.com/768x459/00ff00 2x,
+  https://via.placeholder.com/1024x612/0000ff 3x"
 >
 </body>
 </html>
