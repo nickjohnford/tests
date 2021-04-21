@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background: green;
+}
+</style>
+</head>
+<body>
+<h1>Testing importing css only if IE</h1>
+<script>
+if (-1 !== window.navigator.userAgent.indexOf('Trident/7') || -1 !== window.navigator.userAgent.indexOf('MSIE 10')) {
+  var linkElem = document.createElement('link');
+  linkElem.rel = 'stylesheet';
+  linkElem.type = 'text/css';
+  linkElem.href = 'ie.css';
+  document.head.append(linkElem);
+}
+</script>
+</body>
+</html>
