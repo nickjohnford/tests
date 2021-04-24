@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.scrollwrap {
+  background: #ccc;
+  display: flex;
+  max-width: 400px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollitem {
+  flex: 0 0 100%;
+  height: auto;
+  scroll-snap-align: start;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="scrollwrap">
+  <img class="scrollitem" src="https://via.placeholder.com/400x300/990000" width="400" height="300" loading="lazy">
+  <img class="scrollitem" src="https://via.placeholder.com/400x300/009900" width="400" height="300" loading="lazy">
+  <img class="scrollitem" src="https://via.placeholder.com/400x300/000099" width="400" height="300" loading="lazy">
+</div>
+
+</body>
+</html>
