@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1 id="info"></h1>
+<script>
+var elem = document.getElementById('info');
+elem.append(window.innerWidth);
+elem.append(' x ' + window.innerHeight);
+elem.append(' x' + window.devicePixelRatio);
+</script>
+</body>
