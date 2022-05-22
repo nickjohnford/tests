@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background: #ffd;
+  font-family: system-ui;
+}
+</style>
+</head>
+<body>
+<h1>Export SVG to raster image via canvas</h1>
+
+<h2>SVG XML</h2>
+<p>The inline SVG XML.</p>
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="shape" viewBox="0 0 100 100">
+    <polygon points="25 25 25 75 75 75 75 25"/>
+  </symbol>
+  <symbol id="shape2" viewBox="0 0 100 100">
+    <polygon points="15 15 15 60 60 60 60 15"/>
+  </symbol>
+  <use xlink:href="#shape" fill="red"/>
+  <use xlink:href="#shape2" fill="blue"/>
+</svg>
+
+<h2>SVG Image</h2>
+<p>SVG XML is then turned into the src of an svg image element.</p>
+<img id="svgimg">
+
+<h2>Canvas</h2>
+<p>The svg image can then be painted onto a canvas element.</p>
+<canvas id="canvas"></canvas>
+
+<h2>JPG and PNG</h2>
+<p>The canvas can then output the image data as a jpg and png.</p>
+<img id="jpgimg">
+<img id="pngimg">
+
+<script>
+const svgElem = document.getElementById('svg');
+const canvasElem = document.getElementById('canvas');
+const canvasCtx = canvasElem.getContext('2d');
+const svgImgElem = document.getElementById('svgimg');
+const jpgImgElem = document.getElementById('jpgimg');
+const pngImgElem = document.getElementById('pngimg');
+const svgStr = new XMLSerializer().serializeToString(svgElem);
+const svgB64 = 'data:image/svg+xml;base64,' + btoa(svgStr);
+svgImgElem.src = svgB64;
+svgImgElem.onload = function() {
+  canvasCtx.drawImage(svgImgElem, 0, 0);
+  jpgImgElem.src = canvasElem.toDataURL('image/jpeg');
+  pngImgElem.src = canvasElem.toDataURL('image/png');
+}
+</script>
+</body>
+</html>

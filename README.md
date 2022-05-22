@@ -10,3 +10,5 @@ A place to hold HTML/CSS/JS tests and experiments
 [PICTURE ELEMENT](picture) : basic picture element test
 
 [SVG](svg) : SVGs that work when loaded directly as well as with xlink
+
+[SVG EXPORT](svgexport) : Inline SVG to image via canvas
