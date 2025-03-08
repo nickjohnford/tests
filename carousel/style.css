@@ -1,17 +1,30 @@
+:root {
+  --scroll-item-padding: 16px;
+  --scroll-item-width: 400px;
+}
 html {
   font-family: system-ui;
   font-size: 100%;
 }
+body {
+  margin: 0;
+}
+h1, h2 {
+  margin-inline: var(--scroll-item-padding);
+}
 .scrollwrap {
   display: flex;
-  gap: 16px;
-  max-width: 400px;
+  gap: var(--scroll-item-padding);
+  max-width: calc(100% - (2 * var(--scroll-item-padding)));
   overflow-x: scroll;
+  padding-inline: var(--scroll-item-padding);
+  scroll-padding-inline: var(--scroll-item-padding);
   scroll-snap-type: x mandatory;
+  width: calc(var(--scroll-item-width) - (2 * var(--scroll-item-padding)));
 }
 .scrollitem {
   border-radius: 32px;
-  flex: 0 0 100%;
   height: auto;
   scroll-snap-align: start;
+  width: 100%;
 }
