@@ -28,3 +28,7 @@ h1, h2 {
   scroll-snap-align: start;
   width: 100%;
 }
+.scrollwrap--hints .scrollitem {
+  scroll-snap-align: center;
+  width: 80%;
+}
