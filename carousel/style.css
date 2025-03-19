@@ -25,10 +25,35 @@ h1, h2 {
 .scrollitem {
   border-radius: 32px;
   height: auto;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   width: 100%;
 }
 .scrollwrap--hints .scrollitem {
-  scroll-snap-align: center;
   width: 80%;
+}
+.scrollcontrol {
+  --control-scale: 1;
+  appearance: none;
+  align-self: center;
+  background: #fffc;
+  border: 1px solid #000;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 2em;
+  padding: .3em;
+  position: sticky;
+  transition: transform .03s linear, background .2s linear;
+}
+.scrollcontrol--prev {
+  left: 0;
+  transform: scale(var(--control-scale)) translateX(8px);
+}
+.scrollcontrol--next {
+  right: 0;
+  transform: translateX(-8px) scale(var(--control-scale));
+}
+.scrollcontrol:hover,
+.scrollcontrol:focus {
+  --control-scale: 1.1;
+  background: #fff;
 }
