@@ -42,7 +42,7 @@ h1, h2 {
   font-size: 2em;
   padding: .3em;
   position: sticky;
-  transition: transform .03s linear, background .2s linear;
+  transition: transform .1s linear, background .2s linear;
 }
 .scrollcontrol--prev {
   left: 0;
@@ -54,6 +54,12 @@ h1, h2 {
 }
 .scrollcontrol:hover,
 .scrollcontrol:focus {
-  --control-scale: 1.1;
   background: #fff;
+}
+.scrollcontrol:disabled {
+  --control-scale: 0;
+  cursor: not-allowed;
+}
+.scrollcontrol:active {
+  --control-scale: .9;
 }
