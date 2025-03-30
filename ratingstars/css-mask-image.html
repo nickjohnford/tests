@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rating Stars Using CSS Mask Image</title>
+<style>
+body {
+  font-family: system-ui, sans-serif
+}
+.ratingstars {
+  --starfill-color: #097e86;
+  --starempty-color: #8bd3d8;
+  background: #d3ffd5;
+  display: flex;
+  gap: 30px;
+  width: 400px;
+}
+.ratingstars__star {
+  aspect-ratio: 1;
+  background: var(--starfill-color);
+  flex-grow: 1;
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,5 61,39 98,39 68,59 79,91 50,70 21,91 32,59 2,39 39,39"/></svg>');
+}
+.ratingstars__star--partial {
+  background: linear-gradient(to right, var(--starfill-color) var(--gradient-position), var(--starempty-color) var(--gradient-position));
+}
+.ratingstars__star--partial25 {
+  --gradient-position: 25%;
+}
+.ratingstars__star--partial50 {
+  --gradient-position: 50%;
+}
+.ratingstars__star--partial75 {
+  --gradient-position: 75%;
+}
+.ratingstars__star--empty {
+  background: var(--starempty-color);
+}
+</style>
+</head>
+<body>
+  <p>Review stars that are defined in CSS and are able to be spaced at different amounts without affecting the partial star colouring.</p>
+  <div class="ratingstars">
+    <div class="ratingstars__star"></div>
+    <div class="ratingstars__star"></div>
+    <div class="ratingstars__star ratingstars__star--partial ratingstars__star--partial25"></div>
+    <div class="ratingstars__star ratingstars__star--empty"></div>
+    <div class="ratingstars__star ratingstars__star--empty"></div>
+  </div>
+  <div class="ratingstars">
+    <div class="ratingstars__star"></div>
+    <div class="ratingstars__star"></div>
+    <div class="ratingstars__star ratingstars__star--partial ratingstars__star--partial50"></div>
+    <div class="ratingstars__star ratingstars__star--empty"></div>
+    <div class="ratingstars__star ratingstars__star--empty"></div>
+  </div>
+  <div class="ratingstars">
+    <div class="ratingstars__star"></div>
+    <div class="ratingstars__star"></div>
+    <div class="ratingstars__star ratingstars__star--partial ratingstars__star--partial75"></div>
+    <div class="ratingstars__star ratingstars__star--empty"></div>
+    <div class="ratingstars__star ratingstars__star--empty"></div>
+  </div>
+</body>
